@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57B9608A-9F04-4AAC-B002-F4EE98D17698}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Al.AI</RootNamespace>
+    <AssemblyName>Al.AI</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\Bin\AI\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging">
+      <HintPath>..\Bin\AI\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\Bin\AI\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\Bin\AI\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.FFMPEG">
+      <HintPath>..\Bin\AI\AForge.Video.FFMPEG.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Vision">
+      <HintPath>..\Bin\AI\AForge.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="DialogueMaster.Babel">
+      <HintPath>..\Bin\DialogueMaster.Babel.dll</HintPath>
+    </Reference>
+    <Reference Include="Exocortex.DSP">
+      <HintPath>..\Bin\Exocortex.DSP.dll</HintPath>
+    </Reference>
+    <Reference Include="StringParser">
+      <HintPath>..\Bin\StringParser.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebResourceProvider">
+      <HintPath>..\Bin\WebResourceProvider.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIML\AIMLTagHandlers\bot.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\condition.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\date.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\formal.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\gender.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\get.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\gossip.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\id.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\input.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\javascript.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\learn.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\lowercase.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\person.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\person2.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\random.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\sentence.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\set.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\size.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\sr.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\srai.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\star.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\system.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\that.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\thatstar.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\think.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\topicstar.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\uppercase.cs" />
+    <Compile Include="AIML\AIMLTagHandlers\version.cs" />
+    <Compile Include="AIML\Bot.cs" />
+    <Compile Include="AIML\Normalize\ApplySubstitutions.cs" />
+    <Compile Include="AIML\Normalize\MakeCaseInsensitive.cs" />
+    <Compile Include="AIML\Normalize\SplitIntoSentences.cs" />
+    <Compile Include="AIML\Normalize\StripIllegalCharacters.cs" />
+    <Compile Include="AIML\Request.cs" />
+    <Compile Include="AIML\Result.cs" />
+    <Compile Include="AIML\User.cs" />
+    <Compile Include="AIML\Utils\AIMLLoader.cs" />
+    <Compile Include="AIML\Utils\AIMLTagHandler.cs" />
+    <Compile Include="AIML\Utils\CustomTag.cs" />
+    <Compile Include="AIML\Utils\Gender.cs" />
+    <Compile Include="AIML\Utils\MatchState.cs" />
+    <Compile Include="AIML\Utils\Node.cs" />
+    <Compile Include="AIML\Utils\SettingsDictionary.cs" />
+    <Compile Include="AIML\Utils\SubQuery.cs" />
+    <Compile Include="AIML\Utils\TagHandler.cs" />
+    <Compile Include="AIML\Utils\TextTransformer.cs" />
+    <Compile Include="NLP\Base\Corpus.cs" />
+    <Compile Include="NLP\NaturalLanguage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NLP\Base\SpamFilter.cs" />
+    <Compile Include="NLP\Base\Translator.cs" />
+    <Compile Include="Vision\MotionDetector.cs" />
+    <Compile Include="Vision\Sureveillance.cs" />
+    <Compile Include="VPI\SpeakerRecognition.cs" />
+    <Compile Include="VPI\UtilityFunctions.cs" />
+    <Compile Include="VPI\WaveIn.cs" />
+    <Compile Include="VPI\WaveNative.cs" />
+    <Compile Include="VPI\WaveOut.cs" />
+    <Compile Include="VPI\WaveStream.cs" />
+    <Compile Include="VPI\WAVFile.cs" />
+    <Compile Include="VPI\WAVFileExceptions.cs" />
+    <Compile Include="VPI\WAVFormat.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AIML\About.txt" />
+    <Content Include="AIML\ConfigurationFiles\DefaultPredicates.xml" />
+    <Content Include="AIML\ConfigurationFiles\GenderSubstitutions.xml" />
+    <Content Include="AIML\ConfigurationFiles\Person2Substitutions.xml" />
+    <Content Include="AIML\ConfigurationFiles\PersonSubstitutions.xml" />
+    <Content Include="AIML\ConfigurationFiles\Settings.xml" />
+    <Content Include="AIML\ConfigurationFiles\Splitters.xml" />
+    <Content Include="AIML\ConfigurationFiles\Substitutions.xml" />
+    <Content Include="AIML\License.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
